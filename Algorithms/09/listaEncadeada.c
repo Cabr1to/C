@@ -1,36 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void imprimir(celula *lista);
+// struct para um item da losta que possui um int
+typedef struct ElementoLista Item;
+struct ElementoLista
+{
+    int valor;
+    struct ElementoLista *prox;
+};
 
-int main (){
-   
-    typedef struct celula celula;
-    struct celula {
-        int conteudo;
-        celula *prox_celula;
-    };
+// prototipos
+void imprime(Item *head);
+void insere(Item *head);
+void libera(Item *head);
 
-    celula* celula(int conteudo, celula* prox){
-        celula* celula = malloc(sizeof(celula));
-        celula->conteudo = conteudo;
-        celula->prox_celula = prox_celula;
-    }
+// funcao main
+int main()
+{
+    // cria a cabeca da lista
+    Item head;
+    head.prox == NULL;
 
-
-    celula *lista;
-    lista = malloc(sizeof(celula));
-    lista->prox = NULL;
-
-   printf ("sizeof (celula) = %d\n", sizeof (celula));
-
+    printf("sizeof (celula) = %d\n", sizeof(Item));
 }
 
-
-
-void imprimir(celula *lista){
-    if (lista != NULL){
-        printf("%d\n", lista->conteudo);
-        imprimir(lista->prox);
+void imprime(Item *head)
+{
+    if (head != NULL)
+    {
+        printf("%d\n", head->valor);
+        imprimir(head->prox);
     }
 }
