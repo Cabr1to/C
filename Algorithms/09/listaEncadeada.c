@@ -11,7 +11,7 @@ struct ElementoLista
 
 // prototipos
 void imprime(Item *head);
-void insere(Item *head);
+void insereFim(Item *head, int valor);
 void libera(Item *head);
 
 // funcao main
@@ -21,7 +21,14 @@ int main()
     Item head;
     head.prox == NULL;
 
-    printf("sizeof (celula) = %d\n", sizeof(Item));
+    printf("sizeof (Item) = %d\n", sizeof(Item));
+
+    // Inserindo dados...
+
+    printf("\nInserindo itens novos...\n");
+    insereFim(&head, 19);
+    insereFim(&head, 10);
+    insereFim(&head, 50);
 }
 
 void imprime(Item *head)
@@ -31,4 +38,12 @@ void imprime(Item *head)
         printf("%d\n", head->valor);
         imprimir(head->prox);
     }
+}
+
+void insereFim(Item *head, int valor)
+{
+    if (head != NULL){
+        head->prox = valor;
+    }
+    
 }
