@@ -9,5 +9,5 @@ struct Element
 };
 
 void InsertNode(Node* head, int value);
-/*void ShowList(Node *head);
-void Free(Node *head);*/
+void ShowList(Node *head);
+void Free(Node *head);
