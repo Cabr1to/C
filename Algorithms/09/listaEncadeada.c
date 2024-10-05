@@ -51,14 +51,14 @@ void imprime(Item *head)
     if (atual != NULL)
     {
         printf("%d\n", atual->valor);
-        imprime(head->prox);     
+        imprime(head->prox);
     }
 }
 
 void insereFim(Item *head, int valor)
 {
     // Cria um ponteiro para o novo item e aloca dinamicamente
-    Item *novo = (Item*)malloc(sizeof(Item));
+    Item *novo = (Item *)malloc(sizeof(Item));
 
     novo->prox = NULL;
     novo->valor = valor;
@@ -88,7 +88,7 @@ void libera(Item *head)
         liberado = atual;
 
         atual = atual->prox;
-        printf("Liberando o item de valor %3d na posicao %x\n",liberado->valor, liberado);
+        printf("Liberando o item de valor %3d na posicao %x\n", liberado->valor, liberado);
 
         free(liberado);
     }
